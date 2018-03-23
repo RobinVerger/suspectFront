@@ -5,6 +5,9 @@ import { SuspectComponent } from './suspect/suspect.component';
 import { EditSuspectComponent } from './edit-suspect/edit-suspect.component';
 import { FormSuspectComponent } from './form-suspect/form-suspect.component';
 import { UpdateSuspectComponent } from './update-suspect/update-suspect.component';
+import { AllEnqueteComponent } from './all-enquete/all-enquete.component';
+import { GetEnqueteComponent } from './get-enquete/get-enquete.component';
+import { CreateEnqueteComponent } from './create-enquete/create-enquete.component';
 
 const routes: Routes = [
   {path: 'suspects', component: SuspectComponent},
@@ -12,7 +15,10 @@ const routes: Routes = [
 children: [
  {path: 'update', component: UpdateSuspectComponent}
 ] },
-  {path: 'formSuspect', component: FormSuspectComponent}
+  {path: 'formSuspect', component: FormSuspectComponent},
+  {path: 'enquetes', component: AllEnqueteComponent},
+  {path: 'enquete/:numeroDossier', component: GetEnqueteComponent},
+  {path: 'creerEnquete', component: CreateEnqueteComponent}
 
 ];
 

@@ -1,0 +1,22 @@
+<mat-card class="suspect-card" *ngIf = "enquete">
+  <mat-card-header>
+    <mat-card-title>{{enquete.nom}}</mat-card-title>
+    <mat-card-subtitle>Numero de dossier:{{enquete.numeroDossier}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p><strong>Nom :</strong>{{enquete.nom}}</p>
+    <p><strong>Type : </strong>{{enquete.categorie}}</p>
+    <p><Strong>Date de création :</Strong>{{enquete.dateCreation}}</p>
+    <p><Strong>Localisation :</Strong>{{enquete.localisation}}</p>
+    <p><Strong>Statut :</Strong> {{enquete.statut}}</p>
+    <p *ngIf="enquete.classee; else noClassee"><Strong>Classée :</Strong> Oui</p>
+    <ng-template #noClassee><p><Strong>Classée :</Strong> Non</p></ng-template>
+    <!-- <p *ngIf="!suspect.casierJudiciaire"><Strong>Casier Judiciare:</Strong> pas de casier judiciaire</p> -->
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-icon-button routerLink="update"><mat-icon>edit</mat-icon></a>
+    <button mat-button>Archiver</button>
+    <button mat-button>Lier à une affaire</button>
+  </mat-card-actions>
+</mat-card>
+<router-outlet></router-outlet>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms/src/directives/ng_form';
 import { SuspectService } from '../suspect.service';
 import { Suspect } from '../suspect';
 
@@ -11,14 +11,10 @@ import { Suspect } from '../suspect';
 export class FormSuspectComponent implements OnInit {
   suspect = new Suspect();
 
-
-
-
   constructor( private suspectService: SuspectService) { }
 
   ngOnInit() {
   }
-
 
   onSubmit(suspect: Suspect): void {
     this.suspectService.postSuspect(this.suspect).subscribe();

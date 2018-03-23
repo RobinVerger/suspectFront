@@ -1,10 +1,7 @@
 import {MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, MatRadioModule,
- MatDatepickerModule, MatNativeDateModule, MatIconModule, MatTableDataSource, MatTableModule} from '@angular/material';
+ MatDatepickerModule, MatNativeDateModule, MatIconModule} from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
-
 import { AppComponent } from './app.component';
 import { SuspectComponent } from './suspect/suspect.component';
 import { SuspectService } from './suspect.service';
@@ -17,7 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { LinkSuspectComponent } from './link-suspect/link-suspect.component';
 import { UpdateSuspectComponent } from './update-suspect/update-suspect.component';
-import { EnqueteComponent } from './enquete/enquete.component';
+import { AllEnqueteComponent } from './all-enquete/all-enquete.component';
+import { EnqueteService } from './enquete.service';
+import { GetEnqueteComponent } from './get-enquete/get-enquete.component';
+import { CreateEnqueteComponent } from './create-enquete/create-enquete.component';
 
 
 
@@ -31,7 +31,9 @@ import { EnqueteComponent } from './enquete/enquete.component';
     FormSuspectComponent,
     LinkSuspectComponent,
     UpdateSuspectComponent,
-    EnqueteComponent,
+    AllEnqueteComponent,
+    GetEnqueteComponent,
+    CreateEnqueteComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -47,8 +49,7 @@ import { EnqueteComponent } from './enquete/enquete.component';
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    MatIconModule,
-    MatTableModule
+    MatIconModule
   ],
   exports: [
     MatCardModule,
@@ -63,7 +64,7 @@ import { EnqueteComponent } from './enquete/enquete.component';
     FormsModule,
     MatIconModule
   ],
-  providers: [SuspectService],
+  providers: [SuspectService, EnqueteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
