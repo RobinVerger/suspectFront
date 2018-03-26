@@ -1,5 +1,5 @@
 <div>
-<form #suspectForm (ngSubmit) ="onSubmit()"class= "form-container">
+<form #suspectForm="ngForm" (ngSubmit) ="onSubmit()"class= "form-container">
   <mat-form-field><input matInput type ="text"  name="nom" placeholder="Nom" [(ngModel)]="suspect.nom"></mat-form-field>
   <mat-form-field><input matInput type ="text"  name="prenom" placeholder="Prenom" [(ngModel)]="suspect.prenom"></mat-form-field>
   <label>Genre: </label>
@@ -23,6 +23,6 @@
 </mat-radio-group>
 <mat-form-field><input matInput type ="number" name="condamnations" placeholder="Nombre de condamnations" [(ngModel)]="suspect.condamnations"></mat-form-field>  
 <mat-form-field><input matInput type ="text" name="typeCondamnation" placeholder="Type de condamnantion" [(ngModel)]="suspect.typeCondamnation"></mat-form-field>
-  <button mat-raised-button type="submit" routerLink="/suspect/{id}">Suivant</button>
+  <button mat-raised-button type="submit">Suivant</button>
 </form>
 </div>

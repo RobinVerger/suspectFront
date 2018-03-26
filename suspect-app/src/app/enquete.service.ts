@@ -30,4 +30,8 @@ export class EnqueteService {
     const OneEnqueteUrl = `${this.oneEnqueteUrl}`;
     return this.http.post<Enquete>(OneEnqueteUrl, enquete, httpOptions).do(data => console.log('post ok?' + data));
 }
+  updateEnquete(enquete: Enquete): Observable<Enquete> {
+  const OneEnqueteUrl = `${this.oneEnqueteUrl}/${enquete.numeroDossier}`;
+  return this.http.put<Enquete>(OneEnqueteUrl, enquete, httpOptions).do(data2 => console.log('update ok ?' + data2));
+}
 }

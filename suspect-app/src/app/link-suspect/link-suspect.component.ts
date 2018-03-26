@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Suspect } from '../suspect';
+import { SuspectService } from '../suspect.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-link-suspect',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LinkSuspectComponent implements OnInit {
 
-  constructor() { }
+  suspect = new Suspect();
+
+  constructor(private suspectService: SuspectService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.suspectService.linkSuspect(this.suspect).subscribe();
+    setTimeout(() => {
+      this.router.navigateByUrl('/suspects');
+      }, 3000);
+  }
 }

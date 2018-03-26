@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Enquete } from '../enquete';
 import { EnqueteService } from '../enquete.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,12 +13,15 @@ import { NgForm } from '@angular/forms';
 export class CreateEnqueteComponent implements OnInit {
   enquete = new Enquete();
 
-  constructor(private enqueteService: EnqueteService) { }
+  constructor(private enqueteService: EnqueteService, private router: Router) { }
 
   ngOnInit() {
   }
 
  onSubmit() {
   this.enqueteService.postEnquete(this.enquete).subscribe();
+  setTimeout(() => {
+    this.router.navigateByUrl('/enquetes');
+    }, 3000);
  }
 }

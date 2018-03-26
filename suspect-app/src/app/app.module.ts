@@ -18,6 +18,8 @@ import { AllEnqueteComponent } from './all-enquete/all-enquete.component';
 import { EnqueteService } from './enquete.service';
 import { GetEnqueteComponent } from './get-enquete/get-enquete.component';
 import { CreateEnqueteComponent } from './create-enquete/create-enquete.component';
+import { UpdateEnqueteComponent } from './update-enquete/update-enquete.component';
+import { SuspectOfEnqueteComponent } from './suspect-of-enquete/suspect-of-enquete.component';
 
 
 
@@ -33,7 +35,9 @@ import { CreateEnqueteComponent } from './create-enquete/create-enquete.componen
     UpdateSuspectComponent,
     AllEnqueteComponent,
     GetEnqueteComponent,
-    CreateEnqueteComponent
+    CreateEnqueteComponent,
+    UpdateEnqueteComponent,
+    SuspectOfEnqueteComponent
   ],
   imports: [
     BrowserAnimationsModule,
